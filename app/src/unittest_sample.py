@@ -21,8 +21,15 @@ class SampleGoogleTest(unittest.TestCase):
     self.driver.quit()
 
   def test_check_google_translate_work_properly(self):
-    self.driver.get("https://www.google.co.jp/")
-    self.assertEqual(self.driver.current_url, "https://www.google.co.jp/")
+    url = "https://www.google.co.jp/"
+    self.driver.get(url)
+    self.assertEqual(self.driver.current_url, url)
 
 if __name__ == '__main__':
   unittest.main(verbosity=2)
+
+# クラス名: 任意。unittest.TestCaseを継承する
+# メソッド名:
+#   - test_から始まるメソッドが自動で実行される。テスト内容を書く
+#   - setUp: 各テストメソッドの前に自動で実行される
+#   - tearDown: 各テストメソッドの後に自動で実行される
